@@ -2,6 +2,8 @@ package coalang.compile.base;
 
 import java.io.IOException;
 
+import coalang.compile.model.CoaInfos;
+
 import ccl.v2_1.err.DebugException;
 import ccl.v2_1.err.ImplementationException;
 import net.bplaced.opl.ccl.CompileSystem;
@@ -22,8 +24,7 @@ public class CoaCompileSystemBase<I, O> implements CompileSystem<I, O> {
 	@Override
 	public final String compileComplete(I infos) throws ImplementationException,
 			DebugException, IOException {
-		// TODO Auto-generated method stub
-		return null;
+		return impl.compileComplete(new CoaInfos<I>(infos));
 	}
 
 	@Override

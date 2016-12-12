@@ -16,5 +16,14 @@ public class CoaInfos<I> {
 	public CoaAnnotation[] getAnnotations(){
 		return annotations;
 	}
+	public CoaAnnotation findAnnotation(String name){
+		for(int i = 0; i < annotations.length; i++){
+			CoaAnnotation a = annotations[i];
+			if(a.getName().equals(name)){
+				return a;
+			}
+		}
+		return null;
+	}
 	
 }
